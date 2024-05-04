@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Fake 2 Column Hack</title>
+</head>
+<body>
+  <style>
+    img {
+      display: block;
+      width: 100%;
+    }
+    
+    .container {
+      width: 95%;
+      max-width: 600px;
+      margin: 0 auto;
+    }
+    
+    /* fake 2 column hack; not good practice; elements overlap in smaller screens */
+    .left {
+      margin-top: -1.5em;
+    }
+    
+    .right {
+      text-align: right;
+    }
+  </style>
+  <div class="container">
+    <img
+      src="lain.jpg"
+      alt="Lain from Serial Experiments Lain"
+      width="300" />
+    <p class="right">May 3, 2024 | 3 comments</p>
+    <h2 class="left">Serial Experiments Lain</h2>
+  </div>
+</body>
+</html>
