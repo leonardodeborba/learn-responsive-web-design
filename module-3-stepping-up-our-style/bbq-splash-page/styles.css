@@ -1,3 +1,7 @@
+* {
+  box-sizing: border-box;
+}
+
 body {
   font-family: "Source Sans Pro", sans-serif;
   font-size: 1rem;
@@ -14,7 +18,6 @@ h1 {
   font-size: 2.25rem;
   font-weight: 300;
   color: #FFF;
-  margin: 2em 0;
 }
 
 h1 + p {
@@ -33,7 +36,6 @@ h2 {
 h2 + p {
   color: #F18119;
   font-weight: 900;
-  font-size: 1rem;
   text-transform: uppercase;
   margin-top: 0;
 } 
@@ -43,32 +45,69 @@ strong {
 }
 
 .top-text {
-  color: #F18119;
   font-size: 0.625rem;
   font-weight: 900;
   text-transform: uppercase;
-  order: -1;
+  color: #F18119;
+  padding-top: .5em;
+  border-top: 5px solid #F18119;
+  border-image: linear-gradient(to left, #FF713B, #FFA51D) 1;
   margin: 0;
+  order: -1;
 }
 
 .fine-print {
   font-size: 0.625rem;
   letter-spacing: 1px;
+  max-width: 270px !important;
 }
 
+/* ==============
+   Layout section
+   ============== */
+   
+   /* Very large screen solution 1 */
+  .intro > *,
+  .main-content > * {
+    max-width: 400px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  
+  /*
+  Very large screen solution 2
+  .container {
+    max-width: 400px;
+    margin: 0 auto;
+  }
+  */
+  
+  /*
+  Very large screen solution 2
+  .container-intro {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    min-height: 50vh;
+  }
+  */
+   
 /* =============
    intro section
    ============= */
 
 .intro {
-  background-image: url("dark-ribs.jpg");
+  background-image: url("ribs.jpg"), linear-gradient(to bottom,#FECb9C, #404040);
+  background-color: #404040;
+  background-blend-mode: multiply;
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
-  background-color: #404040;
   padding: 0 .5em 2em;
   display: flex;
   flex-direction: column;
+  justify-content: space-between;
+  min-height: 50vh;
 }
 
 /* ====================
@@ -79,6 +118,60 @@ strong {
   padding: 2em 1em;
 }
 
+/* ====
+   Form
+   ==== */
+   
+.user-information {
+  width: 80%;
+  max-width: 300px;
+}
+
+input,
+.btn {
+  width: 100%;
+  padding: .7em;
+  border-radius: 5px;
+}
+
+input {
+  font-family: inherit;
+  text-align: inherit;
+  margin-bottom: .75em;
+  border: 1px solid #404040;
+  transform: scale(1);
+  transition: transform 250ms;
+}
+
+input:focus {
+  transform: scale(1.05);
+}
+
+.btn {
+  display: inline-block;
+  padding: 1.4em 2.8em;
+  text-transform: uppercase;
+  font-size: 0.625rem;
+  font-weight: 900;
+  letter-spacing: 1px;
+  border: 0;
+  cursor: pointer;
+
+}
+
+.btn-primary {
+  background-image: linear-gradient(270deg, #FF713B, #FFA51D);
+  color: #FFF;
+  transform: scale(1);
+  transition: transform 250ms;
+}
+
+.btn-primary:hover,
+.btn-primary:focus {
+  background-image: linear-gradient(270deg, #FFA51D, #FF713B);
+  transform: scale(1.07);
+}
+
 /* =============
    Media queries
    ============= */
@@ -87,7 +180,6 @@ strong {
     body {
       font-size: 1.125rem;
       display: flex;
-      align-items: center;
     }
     
     h1 {
@@ -102,5 +194,19 @@ strong {
     .intro,
     .main-content {
       width: 50%;
+      min-height: 100vh;
     }
+       
+   .main-content {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+    
+    /*
+    Very large screen solution 2
+    .container-intro {
+      height: 100%;
+    }
+    */
    }

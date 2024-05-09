@@ -1,0 +1,26 @@
+body {
+  margin: 0;
+}
+
+header {
+  background: lightblue;
+  padding: 1em;
+  width: 75vw;
+  height: 50vh;
+  margin-bottom: 1em;
+}
+
+.para1 {
+  background: lightcoral;
+  padding: 1em;
+  margin: 0;
+  height: 35vmin;
+  margin-bottom: 1em;
+}
+
+.para2 {
+  background: lightgreen;
+  padding: 1em;
+  margin: 0;
+  height: 35vmax;
+}
