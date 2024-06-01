@@ -1,0 +1,126 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-size: 1rem;
+  margin: 0;
+  min-height: 100vh;
+  min-height: 100svh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.card {
+  width: 90%;
+  max-width: 800px;
+  background-color: #50382B;
+  color: #FEF3EC;
+  display: grid;
+  grid-template: 300px 1.5em auto auto 150px 1.5em / 1.5em auto auto 1.5em;
+}
+
+.card-img {
+  object-fit: cover;
+  object-position: center;
+  /* flex-basis: 300px; */
+  grid-row: 1;
+  grid-column: 1 / -1;
+  width: 100%;
+  height: 100%;
+}
+
+.card-title,
+.card-read-time,
+.card-btn {
+  font-family: Blinker, sans-serif;
+}
+
+.card-title {
+  font-size: 1.75rem;
+  color: #F2E2C8;
+  margin: 0;
+  grid-row: 3;
+  grid-column: 2 / -2;
+}
+
+.card-body {
+  font-family: "Source Sans Pro", sans-serif;
+  font-size: 1rem;
+  line-height: 1.6;
+  grid-row: 4;
+  grid-column: 2 / -2;
+}
+
+.card-read-time {
+  opacity: 0.6;
+  margin: 0;
+  line-height: 1;
+  grid-row: 5;
+  grid-column: 2;
+  align-self: end;
+  justify-self: start;
+}
+
+.card-read-time span {
+  display: block;
+}
+
+.card-read-time-number {
+  font-size: 1.4em;
+  font-weight: 700;
+}
+
+.card-btn {
+  font-size: 1.25rem;
+  font-weight: 700;
+  text-decoration: none;
+  letter-spacing: 1px;
+  color: #50382B;
+  background-color: #F2E2C8;
+  padding: .5em 1em;
+  transition: transform 250ms, background-color 50ms;
+  grid-row: 5;
+  grid-column: 3 / 4;
+  align-self: end;
+  justify-self: end;
+}
+
+.card-btn:hover,
+.card-btn:focus {
+  color: #F2E2C8;
+  background-color: #50382B;
+  cursor: pointer;
+  transform: scale(1.2);
+}
+
+@media (min-width: 670px) {
+  .card {
+    grid-template: /* hacky to use gap */ 0px auto auto auto 0px /* hacky to use gap */ / 300px auto auto 0px /* hacky to use gap */;
+    gap: 1.5em;
+  }
+  
+  .card-img {
+    grid-row: 1 / -1;
+    grid-column: 1;
+  }
+  
+  .card-title {
+    grid-row: 2;
+    grid-column: 2 / -1;
+  }
+  
+  .card-body {
+    grid-row: 3;
+  }
+  
+  .card-read-time {
+    grid-row: 4;
+  }
+  
+  .card-btn {
+    grid-row: 4;
+  }
+}
+
